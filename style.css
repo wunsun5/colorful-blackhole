@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    min-height: 100vh;
+}
+
+.outer-circle{
+    position: relative;
+    width: 13em;
+    height: 13em;
+    background: linear-gradient(magenta, yellow, cyan);                             
+    border-radius: 50%;
+    animation: rotate 3s linear infinite;
+}
+
+.outer-circle span{
+    position: absolute;
+    width: 13em;
+    height: 13em;
+    background: linear-gradient(magenta, yellow, cyan);
+    border-radius: 50%;
+}
+
+span{
+    filter: blur(calc(var(--i) * 5px));
+}
+
+.inner-circle{
+    position: absolute;
+    width: 12em;
+    height: 12em;
+    inset: 50%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 100;
+}
+
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
